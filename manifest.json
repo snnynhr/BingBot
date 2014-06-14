@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+
+  "name": "BingBot",
+  "description": "BingBot",
+  "version": "0.0.0.1",
+
+  "permissions": [
+  "tabs",
+	"activeTab",
+	"unlimitedStorage",
+	"http://*/*",
+	"https://*/*"
+  ],
+  "browser_action": {
+      //"default_icon": "icons/tf-19.png",
+      "default_popup": "popup.html",
+      "default_title": "BingBot"
+   },
+  "content_scripts" : [
+  {
+  	"matches": ["*://login.live.com/*"],
+  	"js": ["util/jquery.js"],
+  	"run_at": "document_start"
+  }
+  ],
+   "background" : {
+		"page": "background.html",
+		"persistent": true
+   }
+}
