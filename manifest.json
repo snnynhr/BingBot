@@ -3,17 +3,18 @@
 
   "name": "BingBot",
   "description": "BingBot",
-  "version": "0.0.0.1",
+  "version": "0.0.0.7",
 
   "permissions": [
   "tabs",
 	"activeTab",
 	"unlimitedStorage",
 	"http://*/*",
-	"https://*/*"
+	"https://*/*",
+  "cookies"
   ],
   "browser_action": {
-      //"default_icon": "icons/tf-19.png",
+      "default_icon": "icons/bb-19.png",
       "default_popup": "popup.html",
       "default_title": "BingBot"
    },
@@ -22,10 +23,22 @@
   	"matches": ["*://login.live.com/*"],
   	"js": ["util/jquery.js"],
   	"run_at": "document_start"
+  },
+  {
+    "matches": ["*://login.live.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
   }
   ],
    "background" : {
 		"page": "background.html",
 		"persistent": true
+   },
+   "icons": {
+      "128": "icons/bb128.png",
+      "16": "icons/bb-16.png",
+      "19": "icons/bb-19.png",
+      "32": "icons/bb-32.png",
+      "48": "icons/bb48.png"
    }
 }
